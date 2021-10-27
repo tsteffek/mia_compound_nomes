@@ -9,7 +9,8 @@ from model.vectorizer import Vectorizer
 class FakeDB:
     """
     A simple class that holds our vectorized database in memory.
-    Obviously we'd need something like FAISS for production, but setting that up is probably too much for this challenge.
+    Obviously we'd need something like FAISS for production,
+    but setting that up is probably too much for this challenge.
     """
 
     def __init__(self, data_path, vectorizer: Vectorizer):

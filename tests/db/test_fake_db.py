@@ -18,8 +18,10 @@ class RandomVectorizer(Vectorizer):
 
 class TestFakeDB(TestCase):
     def setUp(self) -> None:
-        self.app = Flask(__name__)
-        self.data_path = '../examples.csv'
+        app = Flask(__name__)
+        app.config['TESTING'] = True
+        self.app = app.test_client()
+        self.data_path = 'examples.csv'
         self.pd = pandas.read_csv(self.data_path, sep=';')
         self.vectorizer = RandomVectorizer(5)
 

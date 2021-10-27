@@ -1,0 +1,5 @@
+GET localhost:5000/predict_icd/Karzinom des Zungengrundes
+
+###
+
+GET localhost:5000/predict_icd/Zungengrundkarzinom
