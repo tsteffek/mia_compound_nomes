@@ -7,7 +7,7 @@ The app is supposed to link compound words and their alternate writing to the sa
 
 Install the project using your favorite python environment manager via the requirements.txt, e.g.
 ```bash
-python3 -m venv .
+virtualenv venv
 python3 -m pip install -r requirements.txt
 ```
 
@@ -23,13 +23,21 @@ mv cc.de.300.bin models/
 
 Now everything should be setup, so run the application using
 ```bash
-cd mcn/
 flask run
 ```
+
+... or just do it all with `sh setup.sh`.
 
 ## Testing
 
 To run the tests, run the usual python unittest command:
+```bash
+python -m unittest discover
+```
+
+## Examples
+
+For automatic testing of the 7 given examples start the server in debug/development mode, but beware - this will have the model read twice and therefore take considerably longer. 
 
 ## A few words
 
@@ -45,7 +53,7 @@ Setting up a "real" database like FAISS or elastic that's able to store and comp
 
 ### The example GET /predict_icd “Zungengrundkarzinom” doesn't work!
 
-Yes, because I don't exactly know what that's supposed to mean. I'm unfamiliar with the syntax and couldn't find anything like it online. I only know 2 ways of sending data with a GET request: Either using a get parameter or a making it part of the URL.
+Yes, because I don't exactly know what that's supposed to mean. I'm unfamiliar with the syntax and couldn't find anything like it online. I only know 2 ways of sending data with a GET request: Either using a get parameter or by making it part of the URL.
 Since a GET parameter needs a name (e.g. `GET /predict_icd?word=Zungengrundkarzinom`) and I would have to guess or define that name, I went with the more modern approach of parsing the URL.
 
 There's also the possibility of sending a request body with the GET request, but that's undefined in the http specification, so I'm assuming this option is out. 
