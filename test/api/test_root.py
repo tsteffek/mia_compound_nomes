@@ -3,9 +3,9 @@ from unittest.mock import Mock
 
 from flask import Flask
 
-from api.root import bp as root_bp
-from db.fake_db import FakeDB
-from model.vectorizer import Vectorizer
+from mcn.api.root import bp as root_bp
+from mcn.db.fake_db import FakeDB
+from mcn.model.vectorizer import Vectorizer
 
 
 class TestRootAPI(TestCase):
@@ -32,5 +32,5 @@ class TestRootAPI(TestCase):
 
         self.mock_vectorizer.vectorize.assert_called_with(input_value)
         self.mock_db.get_most_similar.assert_called_with(returned_vec)
-        self.assertEquals(response.data, returned_id.encode('utf-8'))
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.data, returned_id.encode('utf-8'))
+        self.assertEqual(response.status_code, 200)

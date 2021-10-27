@@ -1,7 +1,7 @@
 from unittest import TestCase
 from unittest.mock import patch, Mock
 
-from model.fasttext_vectorizer import FastTextVectorizer
+from mcn.model.fasttext_vectorizer import FastTextVectorizer
 
 
 class TestFasttextVectorizer(TestCase):

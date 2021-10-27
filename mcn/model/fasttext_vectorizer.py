@@ -1,6 +1,6 @@
 import fasttext
 
-from model.vectorizer import Vectorizer
+from mcn.model.vectorizer import Vectorizer
 
 
 class FastTextVectorizer(Vectorizer):

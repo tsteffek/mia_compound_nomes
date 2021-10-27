@@ -4,8 +4,8 @@ import numpy as np
 import pandas
 from flask import Flask
 
-from db.fake_db import FakeDB
-from model.vectorizer import Vectorizer
+from mcn.db.fake_db import FakeDB
+from mcn.model.vectorizer import Vectorizer
 
 
 class RandomVectorizer(Vectorizer):
@@ -21,7 +21,7 @@ class TestFakeDB(TestCase):
         app = Flask(__name__)
         app.config['TESTING'] = True
         self.app = app.test_client()
-        self.data_path = 'examples.csv'
+        self.data_path = 'test/examples.csv'
         self.pd = pandas.read_csv(self.data_path, sep=';')
         self.vectorizer = RandomVectorizer(5)
 
@@ -35,5 +35,5 @@ class TestFakeDB(TestCase):
         real_first_row = under_test.db.loc[0]
         expected_first_row = self.pd.loc[0]
         real_id = under_test.get_most_similar(real_first_row['vector'])
-        self.assertEquals(real_first_row['name'], expected_first_row['name'])
-        self.assertEquals(real_id, expected_first_row['id'])
+        self.assertEqual(real_first_row['name'], expected_first_row['name'])
+        self.assertEqual(real_id, expected_first_row['id'])

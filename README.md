@@ -27,6 +27,10 @@ cd mcn/
 flask run
 ```
 
+## Testing
+
+To run the tests, run the usual python unittest command:
+
 ## A few words
 
 ### FastText?

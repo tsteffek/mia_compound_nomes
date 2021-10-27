@@ -3,7 +3,7 @@ import pandas
 
 from sklearn.metrics.pairwise import cosine_similarity
 
-from model.vectorizer import Vectorizer
+from mcn.model.vectorizer import Vectorizer
 
 
 class FakeDB:
