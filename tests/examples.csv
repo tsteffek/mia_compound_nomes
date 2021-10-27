@@ -1,7 +1,8 @@
-Arterienriss;Riss der Arterie
-Harnblaseninfektion;Infektion der Harnblase
-Klaviculafraktur;Fraktur der Klavicula
-Ovarialzyste;Zyste des Ovars
-Schädelprellung;Prellung des Schädels
-Schenkelhalsfraktur;Fraktur des Schenkelhalses
-Zungengrundkarzinom;Karzinom des Zungengrundes
+name;id;alternative
+Arterienriss;I77.2;Riss der Arterie
+Harnblaseninfektion;N30.9;Infektion der Harnblase
+Klaviculafraktur;S42.00;Fraktur der Klavicula
+Ovarialzyste;N83.2;Zyste des Ovars
+Schädelprellung;S00.95;Prellung des Schädels
+Schenkelhalsfraktur;S72.00;Fraktur des Schenkelhalses
+Zungengrundkarzinom;C01;Karzinom des Zungengrundes
