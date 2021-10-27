@@ -33,4 +33,5 @@ class TestRootAPI(TestCase):
         self.mock_vectorizer.vectorize.assert_called_with(input_value)
         self.mock_db.get_most_similar.assert_called_with(returned_vec)
         self.assertEqual(response.data, returned_id.encode('utf-8'))
+        self.assertEqual(response.mimetype, 'text/plain')
         self.assertEqual(response.status_code, 200)
