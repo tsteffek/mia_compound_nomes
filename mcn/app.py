@@ -9,9 +9,10 @@ from model.fasttext_vectorizer import FastTextVectorizer
 
 app = Flask(__name__)
 
-if bool(os.environ.get('WERKZEUG_RUN_MAIN')):
-    app.config['vectorizer'] = FastTextVectorizer(os.getenv('model'))
-    app.config['db'] = FakeDB(os.getenv('data'), app.config['vectorizer'])
+# TODO: find a better place for this, so that it doesn't get run twice.
+#  But that's apparently pretty hard to find in dev mode
+app.config['vectorizer'] = FastTextVectorizer(os.getenv('model'))
+app.config['db'] = FakeDB(os.getenv('data'), app.config['vectorizer'])
 
 app.register_blueprint(default_bp)
 

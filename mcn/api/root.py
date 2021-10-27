@@ -1,8 +1,8 @@
-from flask import Flask, Blueprint
+from flask import Blueprint, current_app as app
 
-bp = Blueprint("default", __name__)
+bp = Blueprint("root", __name__)
 
 
-@bp.route('/predict_icd')
-def predict_icd():  # put application's code here
-    return 'Hello World!'
+@bp.route('/predict_icd/<word>')
+def predict_icd(word):
+    return app.config['db'].get_most_similar(app.config['vectorizer'].vectorize(word))
